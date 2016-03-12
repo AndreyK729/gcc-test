@@ -1,23 +1,18 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 using namespace std;
 
-
-
 int main() {
-    int MyTik=0; //Счетчик приостановок работы
-     
-   //Вывод сообщения о приостановке работы
-   //Цикл на пять тактов
-   while (MyTik<1000)  
-   {    
-      //Вывод оставшегося времени до возобновления работы
-      printf (“Hey JSLab!”);
-      //Приостановка работы на 1 секунду
-      sleep (1);
-      //Увеличение на 1 счетчика приостановок
-      MyTik++;
+
+   char text[] = "Hey JSLab";
+   int digit;
+   for (digit = 0; digit < 1000; ++digit)
+   {
+      sleep(1);
+      text[6] = digit + '0';
+      puts(text);
    }
    return 0;
 }
